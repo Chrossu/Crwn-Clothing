@@ -4,5 +4,5 @@ export const StyledHomepageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 80px;
+  width: 100%;
 `;

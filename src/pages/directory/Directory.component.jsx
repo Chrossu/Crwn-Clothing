@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import MenuItem from '../menu-item/MenuItem.component';
+import MenuItem from '../../components/menu-item/MenuItem.component';
 
 import { StyledDirectoryMenu } from './directory.style';
 
