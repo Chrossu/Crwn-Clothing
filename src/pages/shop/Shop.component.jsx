@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Shop = (collections) => (
-    <h1>Shop page</h1>
+import CollectionPreview from '../../components/collection-preview/Collection-preview.component';
+
+const Shop = ({ collections }) => (
+    collections.map(({ id, ...otherProps }) => <CollectionPreview id={id} {...otherProps} />)
 )
 
 const mapStateToProps = state => ({
