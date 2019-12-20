@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledMenuItem = styled.div`
-  min-width: 30%;
   height: ${(({ size }) => size === 'large' ? '380px' : '240px')}
+  min-width: 30%;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
@@ -23,9 +23,10 @@ export const StyledMenuItem = styled.div`
 `;
 
 export const StyledContent = styled.div`
+  position: absolute;
   height: 90px;
-  min-width: 18%;
   padding: 0 25px;
+  min-width: 18%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +34,6 @@ export const StyledContent = styled.div`
   border: 1px solid black;
   opacity: 0.7;
   background: #fff;
-  position: absolute;
 
   ${StyledMenuItem}:hover & {
     opacity: 0.8;
@@ -46,7 +46,7 @@ export const StyledImage = styled.div`
   height: 100%;
   width: 100%;
 
-  &:hover {
+  ${StyledMenuItem}:hover & {
     transform: scale(1.1);
     transition: transform 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   }
