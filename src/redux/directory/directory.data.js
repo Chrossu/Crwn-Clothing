@@ -26,7 +26,7 @@ export const sections = [
   },
   {
     title: 'mens',
-    imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+    imageUrl: 'https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     size: 'large',
     id: 5,
     linkUrl: 'shop/mens'
