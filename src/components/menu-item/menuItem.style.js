@@ -32,11 +32,11 @@ export const StyledContent = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px solid black;
-  opacity: 0.7;
+  opacity: 0.8;
   background: #fff;
 
   ${StyledMenuItem}:hover & {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 `;
 
