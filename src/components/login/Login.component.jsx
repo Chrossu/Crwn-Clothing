@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
 import FormInput from '../form-input/Form-input.component';
+import ButtonCustom from '../button-custom/Button-custom.component';
 
-import { StyledLoginContainer, StyledForm, StyledInput } from './login.style';
+import { StyledLoginContainer, StyledInput } from './login.style';
 
 const Login = () => {
   const [state, setState] = useState({
@@ -29,14 +30,14 @@ const Login = () => {
 
   return (
     <StyledLoginContainer>
-      <StyledForm onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
         {/* Email Input */}
         <FormInput handleChange={handleChange} name="email" type="email" value={email} label="Email" required />
         {/* Password input */}
         <FormInput handleChange={handleChange} name="password" type="password" value={password} label="Password" required />
         {/* SubmitInput */}
-        <StyledInput type="submit" value="Submit Form" />
-      </StyledForm>
+        <ButtonCustom type="submit" value="Submit Form" />
+      </form>
     </StyledLoginContainer>
   )
 }
