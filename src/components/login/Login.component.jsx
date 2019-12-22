@@ -41,7 +41,7 @@ const Login = () => {
         <FormInput handleChange={handleChange} name="password" type="password" value={password} label="Password" required />
         {/* SubmitInput */}
         <ButtonCustom type="submit">Sign In</ButtonCustom>
-        <ButtonCustom onCLick={signInWithGoogle}>Sign In With Google</ButtonCustom>
+        <ButtonCustom onClick={signInWithGoogle}>Sign In With Google</ButtonCustom>
       </form>
     </StyledLoginContainer>
   )
