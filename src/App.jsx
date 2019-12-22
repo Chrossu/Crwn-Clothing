@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -13,28 +13,41 @@ import AuthenticationPage from './pages/authentication/Authentication.component'
 
 import { auth } from './firebase/firebase.utils';
 
-const App = () => {
-  const unsuscribeFromAuth = null;
+class App extends React.Component {
+  constructor() {
+    super();
 
-  useEffect(() => {
-    unsuscribeFromAuth = auth.onAuthStateChanged(user => {
-      signInSuccess(user);
+    this.state = {
+      currentUser: null
+    };
+  }
+
+  unsubscribeFromAuth = null;
+
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user });
+
       console.log(user);
-    })
+    });
+  }
 
-    return unsuscribeFromAuth();
-  }, [])
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
 
-  return (
-    <>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/shop" component={ShopPage} />
-        <Route exact path="/auth" component={AuthenticationPage} />
-      </Switch>
-    </>
-  );
+  render() {
+    return (
+      <>
+        <Header currentUser={this.state.currentUser} />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/shop" component={ShopPage} />
+          <Route exact path="/auth" component={AuthenticationPage} />
+        </Switch>
+      </>
+    );
+  }
 }
 
 export default connect(null, { signInSuccess })(App);
