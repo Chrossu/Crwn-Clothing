@@ -5,7 +5,7 @@ import ButtonCustom from '../button-custom/Button-custom.component';
 
 import { signInWithGoogle } from '../../firebase/firebase.utils';
 
-import { StyledLoginContainer, StyledTitle } from './login.style';
+import { StyledLoginContainer, StyledTitle, StyledButtonContainer } from './login.style';
 
 const Login = () => {
   const [state, setState] = useState({
@@ -39,9 +39,11 @@ const Login = () => {
         <FormInput handleChange={handleChange} name="email" type="email" value={email} label="Email" required />
         {/* Password input */}
         <FormInput handleChange={handleChange} name="password" type="password" value={password} label="Password" required />
-        {/* SubmitInput */}
-        <ButtonCustom type="submit">Sign In</ButtonCustom>
-        <ButtonCustom onClick={signInWithGoogle}>Sign In With Google</ButtonCustom>
+        {/* Buttons containers */}
+        <StyledButtonContainer>
+          <ButtonCustom type="submit">Sign In</ButtonCustom>
+          <ButtonCustom onClick={signInWithGoogle} color={"googleSignIn"}>Sign In With Google</ButtonCustom>
+        </StyledButtonContainer>
       </form>
     </StyledLoginContainer>
   )
