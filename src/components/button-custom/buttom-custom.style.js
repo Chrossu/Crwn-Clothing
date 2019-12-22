@@ -6,7 +6,7 @@ export const StyledButton = styled.button`
   height: 50px;
   background-color: black;
   color: white;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   font-size 0.95rem;
   transition: all 0.2s ease;
   font-weight: bolder;

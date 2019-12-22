@@ -6,7 +6,6 @@ import { StyledAuthenticationContainer } from './authentication.style';
 
 const AuthenticationPage = () => (
   <StyledAuthenticationContainer>
-    Auth page
     <Login />
   </StyledAuthenticationContainer>
 )
