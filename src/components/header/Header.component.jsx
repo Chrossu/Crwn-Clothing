@@ -19,7 +19,7 @@ const Header = ({ currentUser }) => (
           <StyledLink as="div" onClick={() => auth.signOut()}>SIGN OUT</StyledLink>
           :
           <StyledLink to="/auth">SIGN IN</StyledLink>
-    }
+      }
     </StyledOptionsContainer>
   </StyledHeader>
 )

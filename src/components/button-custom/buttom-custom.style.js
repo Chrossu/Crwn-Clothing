@@ -48,6 +48,8 @@ export const StyledButton = styled.button`
   min-width: 125px;
   with: auto;
   height: 50px;
+  display: flex;
+  align-items: center;
   letter-spacing: 0.8px;
   border: 1px solid transparent;
   padding: 0 35px;

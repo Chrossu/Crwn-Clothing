@@ -42,7 +42,7 @@ const Login = () => {
         {/* Buttons containers */}
         <StyledButtonContainer>
           <ButtonCustom type="submit">Sign In</ButtonCustom>
-          <ButtonCustom onClick={signInWithGoogle} color={"googleSignIn"}>Sign In With Google</ButtonCustom>
+          <ButtonCustom as="div" onClick={signInWithGoogle} color={"googleSignIn"}>Sign In With Google</ButtonCustom>
         </StyledButtonContainer>
       </form>
     </StyledLoginContainer>
