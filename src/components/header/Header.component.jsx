@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import { StyledHeader, StyledLink, StyledLogoContainer, StyledLogo, StyledOptionsContainer } from './header.style';
 
 const Header = () => (

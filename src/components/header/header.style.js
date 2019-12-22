@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
@@ -17,9 +17,9 @@ export const StyledLogoContainer = styled(Link)`
 `;
 
 export const StyledLogo = styled(Logo)`
-  height: 50%;
+  height: 50px;
   width: 70px;
-  padding: 25px 5px;
+  padding: 5px 5px;
 `;
 
 export const StyledOptionsContainer = styled.div`
