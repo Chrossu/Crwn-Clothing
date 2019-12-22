@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import FormInput from '../form-input/Form-input.component';
 import ButtonCustom from '../button-custom/Button-custom.component';
 
-import { signInWithGoogle } from '../../firebase/firebase.utils';
+import { signInWithGoogle, auth } from '../../firebase/firebase.utils';
 
 import { StyledLoginContainer, StyledTitle, StyledButtonContainer } from './login.style';
 
@@ -21,13 +21,20 @@ const Login = () => {
     setState({ ...state, [name]: value })
   }
 
-  const onSubmit = e => {
+  const onSubmit = async e => {
     e.preventDefault();
-    setState({
-      email: '',
-      password: ''
-    })
-    console.log('Logineado');
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+
+      setState({
+        email: '',
+        password: ''
+      })
+    } catch (err) {
+      console.error(err);
+    }
+
   }
 
   return (

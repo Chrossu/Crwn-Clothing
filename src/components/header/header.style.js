@@ -30,7 +30,7 @@ export const StyledOptionsContainer = styled.div`
   justify-content: flex-end;
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledOption = styled.div`
   padding: 25px 15px 0;
   font-size: 1.1rem;
   cursor: pointer;

@@ -6,7 +6,7 @@ import { StyledDirectoryMenu } from './directory.style';
 
 const Directory = ({ sections }) => (
     <StyledDirectoryMenu>
-      {sections.map(({ id, ...otherProps }) => <MenuItem id={id} {...otherProps} />)}
+      {sections.map(({ id, ...otherProps }) => <MenuItem key={id} {...otherProps} />)}
     </StyledDirectoryMenu>
 )
 

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import CollectionPreview from '../../components/collection-preview/Collection-preview.component';
 
 const Shop = ({ collections }) => (
-    collections.map(({ id, ...otherProps }) => <CollectionPreview id={id} {...otherProps} />)
+    collections.map(({ id, ...otherProps }) => <CollectionPreview key={id} {...otherProps} />)
 )
 
 const mapStateToProps = state => ({

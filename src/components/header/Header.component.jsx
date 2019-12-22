@@ -1,9 +1,11 @@
 import React from 'react';
 // import { connect } from 'react-redux';
 
+import { Link } from 'react-router-dom';
+
 import { auth } from '../../firebase/firebase.utils';
 
-import { StyledHeader, StyledLink, StyledLogoContainer, StyledLogo, StyledOptionsContainer } from './header.style';
+import { StyledHeader, StyledOption, StyledLogoContainer, StyledLogo, StyledOptionsContainer } from './header.style';
 
 const Header = ({ currentUser }) => (
   <StyledHeader>
@@ -12,13 +14,13 @@ const Header = ({ currentUser }) => (
     </StyledLogoContainer>
     {/* Options Links container */}
     <StyledOptionsContainer>
-      <StyledLink to="/shop">SHOP</StyledLink>
-      <StyledLink to="/contact">CONTACT</StyledLink>
+      <StyledOption as={Link} to="/shop">SHOP</StyledOption>
+      <StyledOption as={Link} to="/contact">CONTACT</StyledOption>
       {
         currentUser ?
-          <StyledLink as="div" onClick={() => auth.signOut()}>SIGN OUT</StyledLink>
+          <StyledOption onClick={() => auth.signOut()}>SIGN OUT</StyledOption>
           :
-          <StyledLink to="/auth">SIGN IN</StyledLink>
+          <StyledOption as={Link} to="/auth">SIGN IN</StyledOption>
       }
     </StyledOptionsContainer>
   </StyledHeader>
