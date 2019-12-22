@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import FormInput from '../form-input/Form-input.component';
 import ButtonCustom from '../button-custom/Button-custom.component';
 
+import { signInWithGoogle } from '../../firebase/firebase.utils';
+
 import { StyledLoginContainer, StyledTitle } from './login.style';
 
 const Login = () => {
@@ -39,6 +41,7 @@ const Login = () => {
         <FormInput handleChange={handleChange} name="password" type="password" value={password} label="Password" required />
         {/* SubmitInput */}
         <ButtonCustom type="submit">Sign In</ButtonCustom>
+        <ButtonCustom onCLick={signInWithGoogle}>Sign In With Google</ButtonCustom>
       </form>
     </StyledLoginContainer>
   )
