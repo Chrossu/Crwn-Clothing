@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-import { StyledLoginContainer, StyledForm, StyledInput, StyledLabel } from './login.style';
+import FormInput from '../form-input/Form-input.component';
+
+import { StyledLoginContainer, StyledForm, StyledInput } from './login.style';
 
 const Login = () => {
   const [state, setState] = useState({
@@ -10,9 +12,8 @@ const Login = () => {
 
   const { email, password } = state;
 
-  const onChange = e => {
+  const handleChange = e => {
     const { name, value } = e.target;
-    console.log(state);
 
     setState({ ...state, [name]: value })
   }
@@ -26,16 +27,13 @@ const Login = () => {
     console.log('Logineado');
   }
 
-
   return (
     <StyledLoginContainer>
       <StyledForm onSubmit={onSubmit}>
         {/* Email Input */}
-        <StyledInput onChange={onChange} name="email" type="email" value={email} required />
-        <StyledLabel>Email</StyledLabel>
+        <FormInput handleChange={handleChange} name="email" type="email" value={email} label="Email" required />
         {/* Password input */}
-        <StyledInput onChange={onChange} name="password" type="password" value={password} required />
-        <StyledLabel>Password</StyledLabel>
+        <FormInput handleChange={handleChange} name="password" type="password" value={password} label="Password" required />
         {/* SubmitInput */}
         <StyledInput type="submit" value="Submit Form" />
       </StyledForm>

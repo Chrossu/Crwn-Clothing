@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
-const OptionsContainerStyle = css`
-  
-`
-
 export const StyledHeader = styled.div`
   height: 70px;
   width: 100%;

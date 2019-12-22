@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StyledCollectionItem, StyledImage, StyledCollectionFooter, StyledName, StyledPrice } from './collection-item.style';
 
-const CollectionItem = ({ id, name, imageUrl, price }) => (
+const CollectionItem = ({ name, imageUrl, price }) => (
     <StyledCollectionItem>
       <StyledImage imageUrl={imageUrl} />
       <StyledCollectionFooter>
