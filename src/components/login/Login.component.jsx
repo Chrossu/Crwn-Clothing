@@ -36,7 +36,7 @@ const Login = () => {
         {/* Password input */}
         <FormInput handleChange={handleChange} name="password" type="password" value={password} label="Password" required />
         {/* SubmitInput */}
-        <ButtonCustom type="submit" value="Submit Form" />
+        <ButtonCustom type="submit" children="Submit Form" />
       </form>
     </StyledLoginContainer>
   )
