@@ -1,7 +1,7 @@
-import {SIGN_IN_SUCCESS, SIGN_OUT_SUCCESS, SIGN_IN_FAILURE, SIGN_OUT_FAILURE } from './user.types'
+import {SET_CURRENT_USER, SIGN_OUT_SUCCESS, SIGN_IN_FAILURE, SIGN_OUT_FAILURE } from './user.types'
 
-export const signInSuccess = user => ({
-  type: SIGN_IN_SUCCESS,
+export const setCurrentUser = user => ({
+  type: SET_CURRENT_USER,
   payload: user
 })
 
