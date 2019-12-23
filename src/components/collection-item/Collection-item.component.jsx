@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyledCollectionItem, StyledImage, StyledCollectionFooter, StyledName, StyledPrice } from './collection-item.style';
+import { StyledCollectionItem, StyledImage, StyledCollectionFooter, StyledName, StyledPrice, StyledButton } from './collection-item.style';
 
 const CollectionItem = ({ name, imageUrl, price }) => (
     <StyledCollectionItem>
@@ -9,6 +9,7 @@ const CollectionItem = ({ name, imageUrl, price }) => (
         <StyledName>{name.toUpperCase()}</StyledName>
         <StyledPrice>${price}</StyledPrice>
       </StyledCollectionFooter>
+      <StyledButton color="inverted">ADD TO CART</StyledButton>
     </StyledCollectionItem>
 )
 
