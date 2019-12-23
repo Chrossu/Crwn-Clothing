@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 
 import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/Cart-icon.component';
+import CartDropdown from '../cart-dropdown/Cart-dropdown.component';
 
 import { StyledHeader, StyledOption, StyledLogoContainer, StyledLogo, StyledOptionsContainer } from './header.style';
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, isCartHidden }) => (
   <StyledHeader>
     <StyledLogoContainer to="/">
       <StyledLogo />
@@ -24,11 +25,13 @@ const Header = ({ currentUser }) => (
       }
       <CartIcon />
     </StyledOptionsContainer>
+    {!isCartHidden && <CartDropdown />}
   </StyledHeader>
 )
 
 const mapStateToProps = state => ({
-  currentUser: state.user.currentUser
+  currentUser: state.user.currentUser,
+  isCartHidden: state.cart.isHidden
 })
 
 export default connect(mapStateToProps)(Header);

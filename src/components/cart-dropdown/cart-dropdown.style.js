@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledCartDropdownContainer = styled.div`
   position: absolute;
   top: 90px;
-  right: 40px;
+  right: 60px;
   height: 340px;
   width: 240px;
   display: flex;

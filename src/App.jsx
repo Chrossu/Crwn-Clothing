@@ -14,10 +14,6 @@ import AuthenticationPage from './pages/authentication/Authentication.component'
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 class App extends React.Component {
-  constructor() {
-    super();
-  }
-
   unsubscribeFromAuth = null;
 
   componentDidMount() {
