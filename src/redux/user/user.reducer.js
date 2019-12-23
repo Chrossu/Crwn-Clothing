@@ -1,4 +1,4 @@
-import {SET_CURRENT_USER, SIGN_OUT_SUCCESS, SIGN_IN_FAILURE, SIGN_OUT_FAILURE, SIGN_UP_FAILURE} from './user.types'
+import { SET_CURRENT_USER } from './user.types'
 
 const initialState = {
   currentUser: null,
@@ -11,12 +11,6 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         currentUser: action.payload,
-        error: null
-      }
-    case SIGN_OUT_SUCCESS:
-      return {
-        ...state,
-        currentUser: null,
         error: null
       }
     default:

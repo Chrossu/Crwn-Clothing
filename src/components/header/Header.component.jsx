@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import { Link } from 'react-router-dom';
 
 import { auth } from '../../firebase/firebase.utils';
+import CartIcon from '../cart-icon/Cart-icon.component';
 
 import { StyledHeader, StyledOption, StyledLogoContainer, StyledLogo, StyledOptionsContainer } from './header.style';
 
@@ -22,6 +22,7 @@ const Header = ({ currentUser }) => (
           :
           <StyledOption as={Link} to="/auth">SIGN IN</StyledOption>
       }
+      <CartIcon />
     </StyledOptionsContainer>
   </StyledHeader>
 )
