@@ -1,4 +1,4 @@
-import { TOGGLE_CART_HIDDEN } from './cart.types';
+import { TOGGLE_CART_HIDDEN, ADD_ITEM } from './cart.types';
 // import { addItemToCart, removeItemQuantity } from './shop-cart.utils'
 
 // ADD_ITEM, REMOVE_CART_ITEM, REMOVE_ITEM_QUANTITY
@@ -15,11 +15,11 @@ export default (state = initialState, action) => {
         ...state,
         isHidden: !state.isHidden
       }
-    // case ADD_ITEM:
-    //   return {
-    //     ...state,
-    //     cartItems: addItemToCart(state.cartItems, action.payload)
-    //   }
+    case ADD_ITEM:
+      return {
+        ...state,
+        cartItems: [...state.cartItems, action.payload]
+      }
     // case REMOVE_CART_ITEM:
     //   return {
     //     ...state,
