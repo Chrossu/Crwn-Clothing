@@ -1,5 +1,5 @@
 import { TOGGLE_CART_HIDDEN, ADD_ITEM } from './cart.types';
-// import { addItemToCart, removeItemQuantity } from './shop-cart.utils'
+import { addItemToCart } from './cart.utils'
 
 // ADD_ITEM, REMOVE_CART_ITEM, REMOVE_ITEM_QUANTITY
 
@@ -18,7 +18,7 @@ export default (state = initialState, action) => {
     case ADD_ITEM:
       return {
         ...state,
-        cartItems: [...state.cartItems, action.payload]
+        cartItems: addItemToCart(state.cartItems, action.payload)
       }
     // case REMOVE_CART_ITEM:
     //   return {
