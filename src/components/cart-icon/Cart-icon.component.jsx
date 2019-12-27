@@ -5,11 +5,15 @@ import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
 import { StyledCartIconContainer, StyledCartIcon, StyledItemCount } from './cart-icon.style'
 
-const CartIcon = ({ toggleCartHidden }) => (
+const CartIcon = ({ toggleCartHidden, itemsCount }) => (
   <StyledCartIconContainer onClick={toggleCartHidden}>
     <StyledCartIcon />
-    <StyledItemCount>0</StyledItemCount>
+    <StyledItemCount>{itemsCount}</StyledItemCount>
   </StyledCartIconContainer>
 )
 
-export default connect(null, { toggleCartHidden })(CartIcon);
+const mapStateToProps = state => ({
+  itemsCount: state.cart.cartItems.reduce((a, b) => a + b.quantity, 0)
+})
+
+export default connect(mapStateToProps, { toggleCartHidden })(CartIcon);
