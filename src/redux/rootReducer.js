@@ -5,7 +5,7 @@ import userReducer from './user/user.reducer';
 import cartReducer from './cart/cart.reducer';
 
 const rootReducer = combineReducers({
-  directorySections: directoryReducer,
+  directory: directoryReducer,
   shop: shopReducer,
   user: userReducer,
   cart: cartReducer
