@@ -24,7 +24,7 @@ const CartDropdown = ({ cartItems, history, toggleCartHidden }) => (
       onClick={() => {
         history.push("/checkout");
         toggleCartHidden();
-        }
+      }
       }
     >GO TO CHECKOUT</ButtonCustom>
   </StyledCartDropdownContainer>
