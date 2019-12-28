@@ -40,3 +40,8 @@ export const StyledCartItems = styled.div`
   }
 }
 `;
+
+export const StyledEmptyMessage = styled.span`
+  font-size: 1.15rem;
+  margin: 80px auto;
+`;
