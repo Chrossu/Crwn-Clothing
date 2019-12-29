@@ -9,12 +9,12 @@ export const addItem = item => ({
   payload: item
 })
 
-// export const removeCartItem = id => ({
-//   type: REMOVE_CART_ITEM,
-//   payload: id
-// })
+export const removeCartItem = id => ({
+  type: REMOVE_CART_ITEM,
+  payload: id
+})
 
-// export const removeItemQuantity = id => ({
-//   type: REMOVE_ITEM_QUANTITY,
-//   payload: id
-// })
+export const removeItemQuantity = id => ({
+  type: REMOVE_ITEM_QUANTITY,
+  payload: id
+})
