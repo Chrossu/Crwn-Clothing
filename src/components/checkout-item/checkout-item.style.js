@@ -10,8 +10,9 @@ export const StyledContainer = styled.div`
   align-items: center;
 `;
 
-export const StyledImageContainer = styled.img`
+export const StyledImageContainer = styled.div`
   width: 23%;
+  padding-right: 15px;
 
   img {
     width: 100%;
@@ -33,5 +34,6 @@ export const StyledQuantityItem = styled(StyledItem)`
 `;
 
 export const StyledRemove = styled.div`
+  padding-left: 12px;
   cursor: pointer;
 `;
