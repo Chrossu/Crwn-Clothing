@@ -26,6 +26,7 @@ export const StyledItem = styled.span`
 
 export const StyledQuantityItem = styled(StyledItem)`
   display: flex;
+  user-select: none;
 
   div {
     margin: 0 10px;

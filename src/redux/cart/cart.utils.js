@@ -16,8 +16,8 @@ export const addItemToCart = (stateCarts, item) => {
 export const removeItemQuantity = (cartItems, itemIdToRemove) => {
   const findCartItem = cartItems.find(item => item.id === itemIdToRemove);
 
-  if (findCartItem && findCartItem.quantity === 1) {
-    return;
+  if (findCartItem.quantity === 1) {
+    return [...cartItems];
   }
 
   return cartItems.map(item =>

@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { removeCartItem } from '../../redux/cart/cart.actions';
+import { removeCartItem, removeItemQuantity, addItem } from '../../redux/cart/cart.actions';
 
 import { StyledContainer, StyledImageContainer, StyledItem, StyledQuantityItem, StyledRemove } from './checkout-item.style'
 
-const CheckoutItem = ({ cartItem: { id, name, imageUrl, quantity, price }, removeCartItem }) => {
+const CheckoutItem = ({ cartItem, removeCartItem, removeItemQuantity, addItem }) => {
+  const { id, name, imageUrl, quantity, price } = cartItem;
   return (
     <StyledContainer>
       <StyledImageContainer>
@@ -13,9 +14,9 @@ const CheckoutItem = ({ cartItem: { id, name, imageUrl, quantity, price }, remov
       </StyledImageContainer>
       <StyledItem>{name}</StyledItem>
       <StyledQuantityItem>
-        <div>&#10094;</div>
+        <div onClick={() => removeItemQuantity(id)}>&#10094;</div>
         <span>{quantity}</span>
-        <div>&#10095;</div>
+        <div onClick={() => addItem(cartItem)}>&#10095;</div>
       </StyledQuantityItem>
       <StyledItem>{price}</StyledItem>
       <StyledRemove onClick={() => removeCartItem(id)}>&#10005;</StyledRemove>
@@ -23,4 +24,4 @@ const CheckoutItem = ({ cartItem: { id, name, imageUrl, quantity, price }, remov
   )
 }
 
-export default connect(null, { removeCartItem })(CheckoutItem);
+export default connect(null, { removeCartItem, removeItemQuantity, addItem })(CheckoutItem);

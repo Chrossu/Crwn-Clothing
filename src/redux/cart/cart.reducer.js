@@ -1,7 +1,5 @@
 import { TOGGLE_CART_HIDDEN, ADD_ITEM, REMOVE_CART_ITEM, REMOVE_ITEM_QUANTITY } from './cart.types';
-import { addItemToCart } from './cart.utils'
-
-// ADD_ITEM, REMOVE_CART_ITEM, REMOVE_ITEM_QUANTITY
+import { addItemToCart, removeItemQuantity } from './cart.utils'
 
 const initialState = {
   isHidden: true,
