@@ -28,7 +28,7 @@ export default (state = initialState, action) => {
     case REMOVE_ITEM_QUANTITY:
       return {
         ...state,
-        cartItems: removeItemQuantity(state.cartItems, action.payload)
+        // cartItems: removeItemQuantity(state.cartItems, action.payload)
       }
     default:
       return state;
