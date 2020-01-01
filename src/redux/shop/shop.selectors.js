@@ -2,14 +2,6 @@ import { createSelector } from 'reselect';
 
 const selectShop = state => state.shop;
 
-const collectionIdMap = {
-  hats: 1,
-  sneakers: 2,
-  jackets: 3,
-  womens: 4,
-  mens: 5
-}
-
 export const selectShopCollections = createSelector(
   [selectShop],
   shop => shop.collections
@@ -17,5 +9,5 @@ export const selectShopCollections = createSelector(
 
 export const selectCollection = collectionUrlParam => createSelector(
   [selectShopCollections],
-  collections => collections.find(item => item.id === collectionIdMap[collectionUrlParam])
+  collections => collections[collectionUrlParam]
 )
