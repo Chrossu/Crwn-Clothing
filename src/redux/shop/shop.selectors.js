@@ -2,19 +2,20 @@ import { createSelector } from 'reselect';
 
 const selectShop = state => state.shop;
 
-// 
+// Selector to get collections from shop state
 export const selectShopCollections = createSelector(
   [selectShop],
   shop => shop.collections
-)
-
+  )
+  
+// Selector to convert the shop object state into an array and map into it
 export const selectCollectionsForPreview = createSelector(
   [selectShopCollections],
-  collections => Object.values(collections)
+  collections => collections ? Object.values(collections) : []
 )
 
 // Selector for single collection rendering, like when category in homepage is selected
 export const selectCollection = collectionUrlParam => createSelector(
   [selectShopCollections],
-  collections => collections[collectionUrlParam]
+  collections => (collections ? collections[collectionUrlParam] : null)
 )
