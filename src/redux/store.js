@@ -4,8 +4,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk'
 import rootReducer from './rootReducer';
 
-const initialState = {};
+const middlewares = [thunk];
 
-export const store = createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk)));
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middlewares)));
 
 export const persistor = persistStore(store);
